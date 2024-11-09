@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="script.js"> </script>
-  <title>PERA | Growshop </title>
+  <title>PERA | Growshop</title>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  
+  <h1>Bienvenido a PERA Growshop</h1>
+  <h2>Encuentra los mejores productos para tu cultivo</h2>
+
+
+  <div id="mensaje" style="color: green; font-weight: bold;"></div>
+
+  <div>
+    <label for="producto">Selecciona un producto:</label>
+    <select id="producto">
+      <option value="tierra">Tierra</option>
+      <option value="macetas">Macetas</option>
+      <option value="fertilizantes">Fertilizantes</option>
+    </select>
+    <button id="agregarProducto">Agregar al carrito</button>
+  </div>
+
+  <div id="carrito">
+    <h3>Carrito de compras:</h3>
+    <ul id="listaProductos"></ul>
+    <p><strong>Total: $<span id="totalCarrito">0</span></strong></p>
+  </div>
 </body>
 </html>

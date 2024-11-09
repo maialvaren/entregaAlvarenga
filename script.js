@@ -1,46 +1,88 @@
-let nombre = "Maira";
-let condición = "Reprocann aprobado"
 
-let pregunta = prompt("¿Cómo te llamas?")
-alert("¡Gracias por tu visita, " + pregunta+"!")
+const productosDisponibles = [
+  { nombre: "tierra", precio: 100 },
+  { nombre: "macetas", precio: 50 },
+  { nombre: "fertilizantes", precio: 200 }
+];
 
-console.log(pregunta)
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-if(condición == "Reprocann aprobado"){
-  console.warn("Trámite aprobado")
-}else{
-  console.log("Revisar trámite")
+
+function guardarCarrito() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-function Geneticas(){
-  console.log("Índica")
-  console.log("Sativa");
+
+function mostrarMensaje(mensaje) {
+  const mensajeDiv = document.getElementById('mensaje');
+  mensajeDiv.textContent = mensaje;
+  setTimeout(() => {
+    mensajeDiv.textContent = ''; 
+  }, 3000);
 }
 
-Geneticas();
+
+function mostrarCarrito() {
+  const listaProductos = document.getElementById('listaProductos');
+  const totalCarritoElem = document.getElementById('totalCarrito');
+  listaProductos.innerHTML = ''; 
 
 
-function saludar(parametro1, parametro2){
-  console.log(`Hola${parametro1} ${parametro2}`);
+  const total = carrito.reduce((acum, producto) => acum + producto.precio, 0);
+
+
+  carrito.map((producto, index) => {
+    const item = document.createElement('li');
+    item.textContent = `${producto.nombre} - $${producto.precio}`;
+
+
+    const botonEliminar = document.createElement('button');
+    botonEliminar.textContent = 'Eliminar';
+    botonEliminar.onclick = () => eliminarProducto(index);
+
+    item.appendChild(botonEliminar);
+    listaProductos.appendChild(item);
+  });
+
+
+  totalCarritoElem.textContent = total;
 }
 
-let parametro1 = "Emanuel"; 
-let parametro2 = "Ariel";
 
-let resultado = 0;  
+function agregarProducto() {
+  const productoSelect = document.getElementById('producto');
+  const nombreProducto = productoSelect.value;
 
-function sumar(numeroA, numeroB){
-  resultado = numeroA+numeroB;
+
+  const producto = productosDisponibles.find(p => p.nombre === nombreProducto);
+
+  if (producto) {
+
+    const productoExistente = carrito.find(p => p.nombre === producto.nombre);
+    
+    if (productoExistente) {
+      mostrarMensaje('Este producto ya está en el carrito.');
+    } else {
+
+      carrito.push({ nombre: producto.nombre, precio: producto.precio });
+      guardarCarrito();
+      mostrarCarrito();
+      mostrarMensaje('Producto agregado al carrito.'); 
+    }
+  } else {
+    mostrarMensaje('Producto no encontrado.');
+  }
 }
 
-function mostrar(mensaje){
-  console.log(mensaje);
+function eliminarProducto(index) {
+  carrito.splice(index, 1);
+  guardarCarrito();
+  mostrarCarrito();
+  mostrarMensaje('Producto eliminado del carrito.'); 
 }
 
-sumar(6,3)
 
-mostrar(resultado)
+document.getElementById('agregarProducto').addEventListener('click', agregarProducto);
 
-for(let i=0;i<10;i++){
-  console.log("Iteración N" + i);
-}
+
+window.addEventListener('load', mostrarCarrito);
