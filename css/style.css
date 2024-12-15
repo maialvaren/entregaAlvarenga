@@ -1,0 +1,466 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body h1 {
+  font-size: 90px;
+}
+body form input {
+  padding: 4px 15px;
+}
+
+body h2 {
+  font-family: "Signika", sans-serif;
+  font-size: 45px;
+  margin: 0 auto;
+  font-style: normal;
+}
+body .subtitulo {
+  color: #6A8C48;
+  text-shadow: -1px -1px 0 #52573F, 2px -1px 0 #52573F, -1px 1px 0 #52573F, 1px 1px 0 #52573F; /* Sombra de texto que actúa como borde */
+}
+
+.color-propio {
+  color: #52573F;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* Tamaño de texto más pequeño para pantallas pequeñas */
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .subtitulo {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+/* Cambiar el color de fondo y el color del texto del botón del acordeón */
+.accordion-button {
+  color: rgb(0, 0, 0);
+}
+
+.accordion {
+  margin-top: 250px; /* Mueve el acordeón hacia abajo */
+}
+
+/* Cambiar el color de fondo del botón del acordeón cuando está colapsado */
+.accordion-button:not(.collapsed) {
+  background-color: #6A8C48; /* Verde más oscuro */
+  color: rgb(0, 0, 0);
+}
+
+/* Opcional: Cambiar el color de fondo y del texto cuando el botón está enfocado */
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem #e0e7d9; /* Sombra verde */
+}
+
+header {
+  color: #000000;
+  text-align: center;
+  padding-top: 0px;
+  z-index: 1000;
+}
+header nav ul {
+  list-style-type: none;
+  padding-top: 20px;
+}
+header nav ul li {
+  display: inline;
+  padding: 10px;
+}
+header nav ul li a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: #8C6B48;
+}
+
+video {
+  width: 100vw; /* Ajusta el ancho al 100% de la ventana */
+  height: 100vh; /* Ajusta el alto al 100% de la ventana */
+  object-fit: cover; /* Escala el video manteniendo proporciones y rellenando la ventana */
+}
+
+header .banner-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+header .banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionarla */
+  display: block;
+}
+header .banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0);
+  padding: 20px;
+  text-align: center;
+}
+header .menu {
+  position: sticky;
+}
+
+.imgNosotros, .imgProductos {
+  width: 400px;
+  padding: 20px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+}
+
+.titulo-nosotros, .productos {
+  margin-top: 80px;
+  margin-left: 30px;
+  padding-top: 130px;
+}
+
+.texto-nosotros, .texto-productos {
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.imgAsesoramiento {
+  width: 400px;
+  padding: 20px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+.titulo-asesoramiento {
+  text-align: right;
+  padding-top: 100px;
+  margin-top: 100px;
+  padding-right: 30px;
+}
+
+.texto-asesoramiento {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-right: 30px;
+  text-align: right;
+  margin-left: 30px;
+}
+
+@media (max-width: 600px) {
+  .imgProductos {
+    width: 350px;
+    margin: auto 0px;
+  }
+  .productos {
+    text-align: center;
+  }
+  .texto-productos {
+    text-align: center;
+  }
+  .imgAsesoramiento {
+    width: 350px;
+    margin: auto 0px;
+  }
+  .titulo-asesoramiento {
+    text-align: center;
+    padding: 0px;
+  }
+  .texto-asesoramiento {
+    text-align: center;
+  }
+  .imgNosotros, .imgProductos {
+    width: 350px;
+    margin: auto 0px;
+  }
+  .titulo-nosotros, .productos {
+    text-align: center;
+    padding: 0px;
+  }
+  .texto-nosotros, .texto-productos {
+    text-align: center;
+    padding: 0px;
+  }
+}
+.contenido {
+  text-align: center;
+  margin-top: 250px;
+  margin-bottom: 70px;
+}
+.contenido .preguntasF {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Signika", sans-serif;
+}
+.contenido .preguntas {
+  text-align: center;
+  padding: 6px;
+}
+
+.pie {
+  margin-top: 100px;
+  text-align: center;
+}
+.pie h4 {
+  font-size: 16px;
+}
+.pie .sociales a {
+  display: inline-block;
+}
+.pie .sociales img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.novedades {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.email-container {
+  display: flex;
+  justify-content: center;
+}
+.email-container .mail-input {
+  border-radius: 20px;
+}
+
+input,
+textarea {
+  width: 100%; /* Ancho del input y textarea */
+  padding: 30px; /* Espacio interno */
+  margin: 5px 0; /* Espacio externo */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+  border: 2px solid #33372F; /* Borde del input y textarea */
+  border-radius: 20px; /* Bordes redondeados */
+  font-family: "Signika";
+  font-weight: bold;
+}
+
+/* Cambia el estilo del input y textarea cuando están en foco */
+input:focus,
+textarea:focus {
+  border-color: #8C6B48; /* Cambia el color del borde */
+  outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+.email {
+  min-width: 300px; /* Ancho del input y textarea */
+  padding: 10px; /* Espacio interno */
+  padding-bottom: 60px;
+  margin: 8px 0; /* Espacio externo */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+  border-radius: 20px; /* Bordes redondeados */
+  display: flex;
+  gap: 10px;
+}
+
+.boton {
+  background-color: #33372F;
+  color: #ffffff;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  border-color: none;
+}
+.boton:hover {
+  background-color: #8C6B48;
+  border-color: #8C6B48;
+}
+
+.textoContacto {
+  font-family: "Signika", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  font-style: normal;
+}
+
+.contacto {
+  width: 500px; /* Ancho del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Espacio interno */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra para el contenedor */
+  border-radius: 20px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Color de fondo */
+}
+
+.boton-mas {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #33372F;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+.boton-mas:hover {
+  background-color: #8C6B48;
+}
+
+.containerSN {
+  width: 100%; /* Ajusta el contenedor para que ocupe el 100% del ancho disponible */
+  margin-bottom: 20px;
+}
+
+.imgSobreNosotros {
+  width: 600px;
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.masAsesoramientoTexto, .texto-sobre-nosotros {
+  flex: 1; /* Esto asegura que el párrafo tome el resto del espacio disponible */
+}
+
+
+.carrusel {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 700px;
+}
+
+@media (max-width: 600px) {
+  h2 .sobre--nosotros {
+    font-size: 22px;
+  }
+  .carrusel {
+    width: 350px;
+  }
+}
+
+.contenedor {
+  display: grid;
+  justify-items: center; /* Centra las imágenes horizontalmente */
+}
+
+.contenedor .contenedorCultivo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.contenedor .contenedorCultivo .card .texto {
+  text-align: center;
+}
+
+.contenedor img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.contenedor img:hover {
+  opacity: 1;
+}
+
+.container{
+  text-align: center;
+  font-family: "Signika", sans-serif;
+  font-size: 15px;
+  }
+
+.container h3{
+    font-size: 20px;
+  }
+
+.container .carritoCompras{
+  padding-top: 100px;
+}
+
+.container, .texto{
+  text-align: center;
+  font-family: "Signika", sans-serif;
+}
+
+.carritoCompras {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+.contenedor .contenedorCultivo .card {
+  border: none; 
+  box-shadow: none; 
+}
+
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%; /* Imagen redonda */
+  margin-top: 15px;
+}
+
+.card h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+.card p {
+  color: #555;
+}
+
+.card .btn {
+  margin-top: 10px;
+  background-color: #28a745;
+  border: none;
+}
+
+.card .btn:hover {
+  background-color: #218838;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+

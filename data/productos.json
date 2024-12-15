@@ -1,0 +1,8 @@
+[
+  { "id": 1, "nombre": "ASESORAMIENTO CULTIVOS", "precio": 100, "imagen": "../Imagenes/armado de salas.png" },
+  { "id": 2, "nombre": "PLAGAS", "precio": 150, "imagen": "../Imagenes/fertilizantes.png" },
+  { "id": 3, "nombre": "GENETICAS", "precio": 200, "imagen": "../Imagenes/geneticas.png" },
+  { "id": 4, "nombre": "TIERRAS", "precio": 50, "imagen": "../Imagenes/armado de salas.png" },
+  { "id": 5, "nombre": "ACEITES", "precio": 100, "imagen": "../Imagenes/aceites.png" },
+  { "id": 6, "nombre": "SALAS", "precio": 850, "imagen": "../Imagenes/armado de salas.png" }
+]
